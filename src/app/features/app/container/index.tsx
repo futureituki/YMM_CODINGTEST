@@ -1,16 +1,32 @@
 'use client'
 
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { Prefectures } from '@/common/constant/prefetcure'
 import { InputArea } from '@/features/app/presenter/inputArea'
+import { usePrefecturesData } from '@/hook/usePrefectureData'
 import { Graph } from '@/ui/graph'
 
 export const AppContainer = () => {
+  const { prefecturesData, getPrefecturesData } = usePrefecturesData()
+  const [selectPrefName, setSelectPrefName] = useState<string>('')
   const [graphData, setGraphData] = useState<
     { prefName: string; data: { year: number; value: number }[] }[]
   >([])
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // console.log(event.target.value)
+  useEffect(() => {
+    if (prefecturesData) {
+      setGraphData([
+        ...graphData,
+        { prefName: selectPrefName, data: prefecturesData.result.data[0].data },
+      ])
+    }
+  }, [prefecturesData])
+  const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      await getPrefecturesData(event.target.id)
+      setSelectPrefName(event.target.value)
+    } else {
+      // graphData.splice()
+    }
   }
   return (
     <div>

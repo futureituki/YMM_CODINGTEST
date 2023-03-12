@@ -13,7 +13,7 @@ export const InputArea: FC<Props> = ({ prefectures, handleChange }) => {
       {prefectures.map((item, index) => (
         <Checkbox
           key={item.prefCode}
-          id={`id_${index}`}
+          id={`${item.prefCode}`}
           value={item.prefName}
           onChange={(e) => handleChange(e)}
         />
