@@ -1,3 +1,11 @@
 export type Type = {
-  name:string
+  result : {
+    line : {
+      data: 
+        {
+          year:number,
+          value:string
+        }[]
+    }
+  }
 }
