@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import styles from '@/styles/ui.module.css'
 import { FC } from 'react'
+import styles from '@/styles/ui.module.css'
 
 type Props = {
   id: string

@@ -1,16 +1,22 @@
-'use client';
-import { Prefecture } from '@/common/const'
-import { Checkbox } from '@/ui/checkbox'
+'use client'
 import { ChangeEvent, FC } from 'react'
+import { Prefecture } from '@/common/const'
+import styles from '@/styles/page.module.css'
+import { Checkbox } from '@/ui/checkbox'
 type Props = {
   prefectures: Prefecture[]
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 export const InputArea: FC<Props> = ({ prefectures, handleChange }) => {
   return (
-    <div>
+    <div className={styles.inputarea}>
       {prefectures.map((item, index) => (
-        <Checkbox key={item.prefCode} id={`id_${index}`} value={item.prefName} onChange={e => handleChange(e)} />
+        <Checkbox
+          key={item.prefCode}
+          id={`id_${index}`}
+          value={item.prefName}
+          onChange={(e) => handleChange(e)}
+        />
       ))}
     </div>
   )
