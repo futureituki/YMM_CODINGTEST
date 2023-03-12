@@ -1,10 +1,12 @@
 export type Type = {
   result: {
-    line: {
-      data: {
-        year: number
-        value: string
-      }[]
-    }
+    data: [
+      {
+        data: {
+          year: number
+          value: number
+        }[]
+      },
+    ]
   }
 }
