@@ -3,9 +3,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
   min-height: 100vh;
-  margin:70px 0;
+}
+.main_contents {
+  padding: 2rem;
+  margin:50px 0;
 }
 .inputarea {
   display:flex;
