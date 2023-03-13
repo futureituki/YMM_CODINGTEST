@@ -6,6 +6,7 @@ import { InputArea } from '@/features/app/presenter/inputArea'
 import { usePrefecturesData } from '@/hook/usePrefectureData'
 import styles from '@/styles/page.module.css'
 import { Graph } from '@/ui/graph'
+import { TitleBar } from '@/ui/titlebar'
 export const AppContainer = () => {
   const { prefecturesData, getPrefecturesData } = usePrefecturesData(),
     [selectPrefName, setSelectPrefName] = useState<string>(''),
@@ -32,9 +33,12 @@ export const AppContainer = () => {
   }
   return (
     <div className={styles.main_container}>
-      <h3 className={styles.heading}>都道府県</h3>
-      <InputArea handleChange={handleChange} prefectures={Prefectures} />
-      <Graph selectPref={graphData} xAxisTitle='年度' yAxisTitle='人口数' />
+      <TitleBar>都道府県別の総人口推移グラフ</TitleBar>
+      <div className={styles.main_contents}>
+        <h3 className={styles.heading}>都道府県</h3>
+        <InputArea handleChange={handleChange} prefectures={Prefectures} />
+        <Graph selectPref={graphData} xAxisTitle='年度' yAxisTitle='人口数' />
+      </div>
     </div>
   )
 }
