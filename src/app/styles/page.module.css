@@ -3,11 +3,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
   min-height: 100vh;
+  margin:70px 0;
 }
-
 .inputarea {
   display:flex;
   gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.heading {
+  margin:10px 0 20px 0;
 }
