@@ -7,17 +7,15 @@ type Props = {
   prefectures: Prefecture[]
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
-export const InputArea: FC<Props> = ({ prefectures, handleChange }) => {
-  return (
-    <div className={styles.inputarea}>
-      {prefectures.map((item, index) => (
-        <Checkbox
-          key={item.prefCode}
-          id={`${item.prefCode}`}
-          value={item.prefName}
-          onChange={(e) => handleChange(e)}
-        />
-      ))}
-    </div>
-  )
-}
+export const InputArea: FC<Props> = ({ prefectures, handleChange }) => (
+  <div className={styles.inputarea}>
+    {prefectures.map((item, index) => (
+      <Checkbox
+        key={item.prefCode}
+        id={`${item.prefCode}`}
+        value={item.prefName}
+        onChange={(e) => handleChange(e)}
+      />
+    ))}
+  </div>
+)
