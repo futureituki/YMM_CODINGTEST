@@ -17,7 +17,12 @@
   display:grid;
   place-items:center;
   background:#ccc;
+  text-align:center;
 }
 .titlebar h1 {
   font-size:1.8rem;
+}
+.titlebar_inner {
+  width:80%;
+  margin:0 auto;
 }

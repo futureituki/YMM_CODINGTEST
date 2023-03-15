@@ -6,7 +6,9 @@ type Props = {
 export const TitleBar: FC<Props> = ({ children }) => {
   return (
     <div className={styles.titlebar}>
-      <h1>{children}</h1>
+      <div className={styles.titlebar_inner}>
+        <h1>{children}</h1>
+      </div>
     </div>
   )
 }
