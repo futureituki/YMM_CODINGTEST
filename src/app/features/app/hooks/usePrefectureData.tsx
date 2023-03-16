@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { Type } from '@/common/type'
 
 export const usePrefecturesData = () => {

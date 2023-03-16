@@ -1,5 +1,6 @@
 'use client'
-import { ChangeEvent, FC } from 'react'
+
+import { FC } from 'react'
 import { Prefecture } from '@/common/const'
 import styles from '@/styles/page.module.css'
 import { Checkbox } from '@/ui/checkbox'
