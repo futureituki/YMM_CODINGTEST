@@ -1,9 +1,9 @@
 'use client'
 
-import { ChangeEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Prefectures } from '@/common/constant/prefetcure'
+import { usePrefecturesData } from '@/features/app/hooks/usePrefectureData'
 import { InputArea } from '@/features/app/presenter/inputArea'
-import { usePrefecturesData } from '@/hook/usePrefectureData'
 import styles from '@/styles/page.module.css'
 import { Graph } from '@/ui/graph'
 import { TitleBar } from '@/ui/titlebar'
