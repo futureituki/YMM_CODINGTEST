@@ -8,11 +8,11 @@ import { InputArea } from '@/features/prefectures/presenter/inputArea'
 import { Graph } from '@/ui/graph'
 
 export const PrefecturesContainer = () => {
-  const { prefecturesData, getPrefecturesData } = usePrefecturesData(),
-    [selectPrefName, setSelectPrefName] = useState<string>(''),
-    [graphData, setGraphData] = useState<
-      { prefName: string; data: { year: number; value: number }[] }[]
-    >([])
+  const { prefecturesData, getPrefecturesData } = usePrefecturesData()
+  const [selectPrefName, setSelectPrefName] = useState<string>('')
+  const [graphData, setGraphData] = useState<
+    { prefName: string; data: { year: number; value: number }[] }[]
+  >([])
   useEffect(() => {
     if (prefecturesData) {
       setGraphData([

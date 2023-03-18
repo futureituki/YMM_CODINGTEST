@@ -13,8 +13,8 @@ type Props = {
   }[]
 }
 export const Graph: FC<Props> = ({ props, xAxisTitle, yAxisTitle, selectPref }) => {
-  const series: Highcharts.SeriesOptionsType[] = [],
-    categories = []
+  const series: Highcharts.SeriesOptionsType[] = []
+  let categories = []
   for (const pref of selectPref) {
     const data = []
     for (const d of pref.data) {
@@ -30,21 +30,21 @@ export const Graph: FC<Props> = ({ props, xAxisTitle, yAxisTitle, selectPref }) 
     })
   }
   const options: Highcharts.Options = {
-      xAxis: {
-        width: '100%',
-        title: {
-          text: xAxisTitle,
-        },
-        categories,
+    xAxis: {
+      width: '100%',
+      title: {
+        text: xAxisTitle,
       },
-      yAxis: {
-        title: {
-          text: yAxisTitle,
-        },
-      },
-      series: series.length === 0 ? [{ type: 'line', name: '都道府県名', data: [] }] : series,
+      categories,
     },
-    chartComponentRef = useRef<HighchartsReact.RefObject>(null)
+    yAxis: {
+      title: {
+        text: yAxisTitle,
+      },
+    },
+    series: series.length === 0 ? [{ type: 'line', name: '都道府県名', data: [] }] : series,
+  }
+  const chartComponentRef = useRef<HighchartsReact.RefObject>(null)
 
   return (
     <div className={styles.graph}>
